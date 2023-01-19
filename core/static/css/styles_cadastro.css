@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+    --text-formulario: #FFFFFF;
+    --cor-de-fundo: #fff;
+    --cor-formulario: #005588;
+    --borda-brasao: #FFFFFF;
+    --borda-formulario: rgba(168, 165, 165, 0.383);
+    /* rgba(149, 149, 149, 0.701)*/
+}
+
+html body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--cor-de-fundo);
+    color: var(--text-formulario);
+}
+
+
+input {
+    border-radius: 10px;
+    height: 30px;
+    border: solid 2px var(--cor-de-fundo);
+    font-weight: 400;
+    font-size: 14px;
+}
+/*Deixa a borda vermelha para entradas inválidas*/
+input:invalid{
+    border: 2px solid red;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: rgb(246, 255, 0);
+}
+
+.bg-container-nav{
+    background-color: #005588;
+}
+
+.links-nav{
+    display: flex;
+    flex-direction: row;
+    color:white;   
+} 
+
+.text-title{
+    background-color:#005588;
+}
+
+.container-form{
+    background-color: #005588;
+}
+
+
+
+
+
+
+
+
+
+
+

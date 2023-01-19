@@ -1,12 +1,18 @@
 from django.shortcuts import render
 
+from .forms import CadastroForm
+
 
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
 
 def cadastrar(request):
-    return render(request, 'cadastrar.html')
+    form = CadastroForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'cadastrar.html', context)
 
 def deletar(request):
     return render(request, 'deletar.html')

@@ -1,0 +1,79 @@
+{% load django_bootstrap5 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'css/styles_cadastro.css' %}">
+</head>
+
+<body>
+
+    <nav class="navbar mb-5 bg-container-nav">
+        <div class="container-fluid">
+            <div class="container border rounded pt-3">
+                <div class="row">
+                    <div class="col-sm-1 mb-2">
+                        <img src="{% static 'img/Brasao.png' %}" alt="Brasao CG" width="100" height="100">
+                    </div>
+                    <div class="col-sm-11 text-center pt-2">
+                        <h1 class="fs-3">CGAP – Coordenadoria de Gestão de Áreas Públicas</h1>
+                        <h2 class="fs-4">Secretária Municipal de Meio Ambiente e Gestão Urbana</h2>
+                    </div>
+                </div>
+                <div class="row border">
+                    <div class="col-sm-12">
+                        <ul class="links-nav mt-2 p-0" type="none">
+                            <div class="col">
+                                <li><a class="text-white" href="#Cadastro">Cadastro</a></li>
+                            </div>
+                            <div class="col">
+                                <li><a class="text-white" href="#Documentacao">Documentação</a></li>
+                            </div>
+                            <div class="col">
+                                <li><a class="text-white" href="#Responsavel-Tecnico">Responsável Técnico</a></li>
+                            </div>
+                            <div>
+                                <li><a class="text-white" href="#Dados-do-Local">Dados do Local</a></li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row text-title border rounded">
+            <div class="col-sm text-center">
+                <h1 class="text-white">Cadastro de área pública</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                {% bootstrap_messages %}
+            </div>
+        </div>
+    </div>
+    <div class="container container-form mt-5 border rounded">
+        <div class="row">
+            <div class="col-sm text-white">
+                <form class="form px-3" action="{% url 'cadastrar' %}" method="post" autocomplete="on">
+                    <!-- Sem o token o formulario não é enviado (csrf_token para form é obrigatorio)-->
+                    {% csrf_token %}
+
+                    {{form}}
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
