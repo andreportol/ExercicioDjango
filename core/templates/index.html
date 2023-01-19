@@ -39,14 +39,13 @@
         <div class="row">
             <div class="col-sm">
                 <div class="select-option">
-                    <h2 class="fs-3 text-center text-decoration-underline">Escolha uma opção:</h2>
-                    <ul class="p-0">
-                        <p class="text-decoration-underline"><a href="">Cadastrar Área</a></p>
-                        <p class="text-decoration-underline"><a href="">Deletar Área</a></p>
-                        <p class="text-decoration-underline"><a href="">Atualizar</a></p>
-                        <p class="text-decoration-underline"><a href="">Pesquisar</a></p>
+                    <h2 class="fs-2 text-center text-decoration-underline pb-5">Escolha uma opção</h2>
+                    <ul class="border border-3 rounded pb-3 " type="circulo" >
+                        <li class="text-decoration-underline fs-3 pb-3"><a href="{% url 'cadastrar' %}">Cadastrar Área</a></li>
+                        <li class="text-decoration-underline fs-3 pb-3"><a href="{% url 'deletar' %}">Deletar Área</a></li>
+                        <li class="text-decoration-underline fs-3 pb-3"><a href="{% url 'atualizar' %}">Atualizar</a></li>
+                        <li class="text-decoration-underline fs-3 pb-3"><a href="{% url 'pesquisar'%}">Pesquisar</a></li>
                     </ul>
-
                 </div>
             </div>
         </div>
