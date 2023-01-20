@@ -14,45 +14,40 @@
 </head>
 
 <body>
-
-    <nav class="navbar mb-5 bg-container-nav">
+    <!-- Navegação -->
+    <nav class="navbar mb-5 bg-nav">
         <div class="container-fluid">
             <div class="container border rounded pt-3">
                 <div class="row">
                     <div class="col-sm-1 mb-2">
                         <img src="{% static 'img/Brasao.png' %}" alt="Brasao CG" width="100" height="100">
                     </div>
-                    <div class="col-sm-11 text-center pt-2">
+                    <div class="col-sm-11 text-center text-white pt-2">
                         <h1 class="fs-3">CGAP – Coordenadoria de Gestão de Áreas Públicas</h1>
                         <h2 class="fs-4">Secretária Municipal de Meio Ambiente e Gestão Urbana</h2>
                     </div>
                 </div>
-                <div class="row border">
+                <div class="row border rounded">
                     <div class="col-sm-12">
                         <ul class="links-nav mt-2 p-0" type="none">
-                            <div class="col">
-                                <li><a class="text-white" href="#Cadastro">Cadastro</a></li>
-                            </div>
-                            <div class="col">
-                                <li><a class="text-white" href="#Documentacao">Documentação</a></li>
-                            </div>
-                            <div class="col">
-                                <li><a class="text-white" href="#Responsavel-Tecnico">Responsável Técnico</a></li>
-                            </div>
-                            <div>
-                                <li><a class="text-white" href="#Dados-do-Local">Dados do Local</a></li>
-                            </div>
+                            <li class="text-white text-decoration-underline fs-6"><a href="#cadastro">Cadastro</a></li>
+                            <li class="text-white text-decoration-underline fs-6"><a
+                                    href="#documentacao">Documentação</a></li>
+                            <li class="text-white text-decoration-underline fs-6"><a href="#resp_tecnico">Responsável
+                                    Técnico</a></li>
+                            <li class="text-white text-decoration-underline fs-6"><a href="dados_local">Dados do
+                                    Local</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
-
+    <!-- Titulo do Formulário com a mensagem -->
     <div class="container">
-        <div class="row text-title border rounded">
+        <div class="row text-title border border-primary rounded p-3">
             <div class="col-sm text-center">
-                <h1 class="text-white">Cadastro de área pública</h1>
+                <h1 class="text-white">Cadastro de Áreas Públicas</h1>
             </div>
         </div>
         <div class="row">
@@ -61,6 +56,7 @@
             </div>
         </div>
     </div>
+    <!-- Formulário de preenchimento -->
     <div class="container container-form mt-5 border rounded">
         <div class="row">
             <div class="col-sm text-white">

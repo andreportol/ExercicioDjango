@@ -10,24 +10,7 @@
 }
 
 html body {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-    background-color: var(--cor-de-fundo);
-    color: var(--text-formulario);
-}
-
-
-input {
-    border-radius: 10px;
-    height: 30px;
-    border: solid 2px var(--cor-de-fundo);
-    font-weight: 400;
-    font-size: 14px;
-}
-/*Deixa a borda vermelha para entradas inválidas*/
-input:invalid{
-    border: 2px solid red;
+    font-family: "Poppins", sans-serif;  
 }
 
 label {
@@ -39,21 +22,22 @@ a{
     text-decoration: none;
     color: white;
 }
-
 a:hover{
     color: rgb(246, 255, 0);
 }
 
-.bg-container-nav{
+/* navegação */
+.bg-nav{
     background-color: #005588;
 }
 
 .links-nav{
     display: flex;
-    flex-direction: row;
-    color:white;   
+    flex-direction: row;  
+    justify-content: space-around; 
 } 
 
+/* Formulário */
 .text-title{
     background-color:#005588;
 }
