@@ -1,21 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-:root {
-    --text-formulario: #FFFFFF;
-    --cor-de-fundo: #fff;
-    --cor-formulario: #005588;
-    --borda-brasao: #FFFFFF;
-    --borda-formulario: rgba(168, 165, 165, 0.383);
-    /* rgba(149, 149, 149, 0.701)*/
-}
-
 html body {
     font-family: "Poppins", sans-serif;  
-}
-
-label {
-    font-size: 14px;
-    font-weight: 400;
 }
 
 a{
@@ -45,7 +31,6 @@ a:hover{
 .container-form{
     background-color: #005588;
 }
-
 
 
 

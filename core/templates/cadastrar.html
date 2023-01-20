@@ -45,9 +45,9 @@
     </nav>
     <!-- Titulo do Formulário com a mensagem -->
     <div class="container">
-        <div class="row text-title border border-primary rounded p-3">
+        <div class="row text-title border rounded p-3">
             <div class="col-sm text-center">
-                <h1 class="text-white">Cadastro de Áreas Públicas</h1>
+                <h1 class="text-white fs-2">Cadastro de Áreas Públicas</h1>
             </div>
         </div>
         <div class="row">
@@ -60,16 +60,192 @@
     <div class="container container-form mt-5 border rounded">
         <div class="row">
             <div class="col-sm text-white">
-                <form class="form px-3" action="{% url 'cadastrar' %}" method="post" autocomplete="on">
+                <form class="form" action="{% url 'cadastrar' %}" method="post" autocomplete="on">
                     <!-- Sem o token o formulario não é enviado (csrf_token para form é obrigatorio)-->
                     {% csrf_token %}
 
-                    {{form}}
+                    <!--Cadastro Dados do Imóvel-->
+
+                    <div class="container mb-5 p-2">
+                        <div class="row">
+                            <div class="col text-center fs-4 p-3">
+                                <h2 class="fs-2">Dados do Imóvel</h2>
+                            </div>
+                        </div>
+                        <div class="row border rounded ">
+                            <div class="col-sm-6 pb-3">
+                                <label class="form-label fs-6">Inscrição Imobiliária:</label>
+                                <input class="form-control w-50" type="text" placeholder="N. da Inscrição" autofocus
+                                    maxlength="11" minlength="11">
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label class="form-label fs-6">Coordenada UTM: </label>
+                                    </div>
+                                    <div class="col-sm-8 py-2 ">
+                                        <input class="form-control" type="number" min="0" max="100" step=". 01"
+                                            placeholder="Coordenada X">
+                                        <div class="pt-2">
+                                            <input class="form-control" type="number" step=".01"
+                                                placeholder="Coordenada Y">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col border rounded py-2">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect01">Opções</label>
+                                    </div>
+                                    <select class="custom-select" id="inputGroupSelect01">
+                                        <option selected>Regiões Urbanas</option>
+                                        <option value="Anhanduizinho">Anhanduizinho</option>
+                                        <option value="Bandeira">Bandeira</option>
+                                        <option value="Centro">Centro</option>
+                                        <option value="Imbirussu">Imbirussu</option>
+                                        <option value="Lagoa">Lagoa</option>
+                                        <option value="Prosa">Prosa</option>
+                                        <option value="Segredo">Segredo</option>
+                                        <option value="Dist. Anhandui">Dist. Anhandui</option>
+                                        <option value="Dist. Rochedinho">Dist. Rochedinho</option>
+                                        <option value="Zona Rural">Zona Rural</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-5 border rounded">
+                            <div class="col-sm pt-2">
+                                <label class="form-label fs-6">Bairro:</label>
+                                <input class="form-control w-50" type="text" placeholder="Bairro" required>
+                                <label class="form-label fs-6 pt-2">Parcelamento:</label>
+                                <input class="form-control w-25" type="text" placeholder="Parcelamento" required>
+                                <label class="form-label fs-6 pt-2">Quadra:</label>
+                                <input class="form-control w-25" type="text" placeholder="Quadra" required>
+                                <label class="form-label fs-6 pt-2">Lote:</label>
+                                <input class="form-control w-25" type="text" placeholder="Lote" required>
+                                <label class="form-label fs-6 pt-2">Logradouro:</label>
+                                <input class="form-control" type="text" placeholder="Logradouro" required>
+                                <label class="form-label fs-6 pt-2">Observações:</label>
+                                <textarea class="form-control mb-3" placeholder="Descreva as observações do local."
+                                    name="" id="" rows="10"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cadastro do ocupante-->
+
+                    <div class="container border rounded">
+                        <div class="row pt-3">
+                            <div class="col-sm text-center">
+                                <h2 class="fs-2">Cadastro</h2>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm">
+                                <label class="form-label fs-6" for="ocupante">Ocupante:</label>
+                                <input class="form-control" type="text" placeholder="Nome completo" id="ocupante"
+                                    required>
+                                <label class="form-label fs-6" for="rg">RG:</label>
+                                <input class="form-control w-25" type="text" placeholder="Registro Geral - RG" id="rg">
+                                <label class="form-label fs-6" for="cpf">CPF:</label>
+                                <input class="form-control w-25" type="text" placeholder="N. do CPF" id="cpf"
+                                    maxlength="11" minlength="11">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cadastro documentação -->
+                    <div class="container border rounded mt-3">
+                        <div class="row pt-3">
+                            <div class="col-sm ">
+                                <h2 class="fs-2 text-center">Documentação</h2>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-4 ">
+                                <label class="form-label fs-6" for="num_notif">Notificação:</label>
+                                <input class="form-control w-50" type="text" id="num_notif"
+                                    placeholder="N. da Notificação" minlength="5" maxlength="6">
+                                <label class="form-label fs-6" for="num_auto">Autuação:</label>
+                                <input class="form-control w-50" type="text" id="num_auto"
+                                    placeholder="N. do Auto de Infração" minlength="5" maxlength="6">
+                            </div>
+                            <div class="col-4">
+
+                            </div>
+                            <div class="col-4 pb-2">
+                                <label class="form-label fs-6" for="date-notif">Data Notificação:</label>
+                                <input class="form-control w-50" type="date" id="date-notif"
+                                    placeholder="Data Notificação">
+                                <label class="form-label fs-6" for="date-auto">Data Autuação:</label>
+                                <input class="form-control w-50" type="date" id="date-auto" placeholder="Data Autuação">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm">
+                                <label class="form-label fs-6">Processo Administrativo:</label>
+                                <input class="form-control w-25" type="text" placeholder="Processo vinculado">
+                                <label class="form-label fs-6">CNPJ:</label>
+                                <input class="form-control w-25" type="text" placeholder="Número da Pessoa Jurídica">
+                                <label class="form-label fs-6 pt-2">Observações:</label>
+                                <textarea class="form-control mb-3" placeholder="Descreva as observações do local."
+                                    name="" id="" rows="10"></textarea>
+                                <label class="form-label fs-5" for="">Reincidente</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        SIM
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault2" checked>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        NÃO
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--Cadastro Auditor -->
+
+                    <div class="container border rounded mt-3 mb-3">
+                        <div class="row">
+                            <div class="col-sm">
+                                <h2 class="text-center fs-2">Auditor Fiscal</h2>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm">
+                                <label class="form-label fs-6" for="nome-auditor">Nome Completo:</label>
+                                <input class="form-control w-50" type="text" placeholder="Nome completo"
+                                    id="nome-auditor" required>
+                                <label class="form-label fs-6" for="data-lancamento">Lançamento:</label>
+                                <input class="form-control w-25" type="date" placeholder="Data" id="data-lancamento"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer -->
+                    <div class="container border rounded text-center mb-5 p-3">
+                        <div class="row justify-content-start">
+                            <div class="col">
+                                <button class="btn btn-primary btn-lg" type="submit">Enviar</button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-lg btn-primary" type="reset">Apagar</button>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
-
 </body>
-
 </html>
