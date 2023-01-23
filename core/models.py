@@ -8,6 +8,7 @@ class Base(models.Model):
     criado = models.DateField('Data de criação', auto_now_add=True)
     modificado = models.DateField('Data de atualização', auto_now=True)
     ativo = models.BooleanField('Ativo?', default=True)
+    
     class Meta:
         abstract = True
 
@@ -20,13 +21,13 @@ class Cadastro(Base):
     parcelamento_imovel = models.CharField(name='Parcelamento',max_length=5)
     quadra_imovel = models.CharField(name='Quadra',max_length=5)
     lote_imovel = models.CharField(name='Lote',max_length=5)
-    logradouro_imovel = models.CharField('Logradouro',max_length=120)
+    logradouro_imovel = models.CharField('Logradouro_imovel',max_length=120)
     obs_imovel = models.TextField(name= 'Observacao') 
     
     def __str__(self):
-        return f' {self.insc_imob} {self.utm_x} {self.utm_y}'
+        return f'{self.Inscricao_Imobiliaria}'
 
 def produto_pre_save(signal, instance, sender, **kwargs):
-    instance.slug = slugify(instance.nome)
+    instance.slug = slugify(instance.Inscricao_Imobiliaria)
 
 signals.pre_save.connect(produto_pre_save, sender=Cadastro)
