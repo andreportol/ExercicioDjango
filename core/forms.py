@@ -1,7 +1,10 @@
 from django import forms
 
+from .models import Cadastro
 
-class CadastroForm(forms.Form):
-   insc_imob =  forms.CharField(label = 'Inscrição Imobiliária', max_length=11, min_length=11)
-   coordenadaUtm = forms.CharField(label= 'Coordenada')
-   
+
+class CadastroModelForm(forms.ModelForm):
+   class Meta:
+      model = Cadastro
+      fields = ['insc_imob']
+

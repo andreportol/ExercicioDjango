@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'AreasPublicas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bd_areas_publicas', # NOME DO BANCO DE DADOS
+        'NAME': 'teste_bd', # NOME DO BANCO DE DADOS
         'USER': 'root',
         'PASSWORD':'Genius2003$',
         'HOST': 'localhost',
