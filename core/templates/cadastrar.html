@@ -87,10 +87,10 @@
                                     </div>
                                     <div class="col-sm-8 py-2 ">
                                         <input class="form-control" type="number" min="0" max="100" step=". 01"
-                                            placeholder="Coordenada X" name="UTM_X">
+                                            placeholder="Coordenada X" name="utm_x">
                                         <div class="pt-2">
                                             <input class="form-control" type="number" step=".01"
-                                                placeholder="Coordenada Y" name="UTM_Y">
+                                                placeholder="Coordenada Y" name="utm_y">
                                         </div>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                                     <div class="input-group-prepend">
                                         <label class="input-group-text" for="inputGroupSelect01">Opções</label>
                                     </div>
-                                    <select class="custom-select" id="inputGroupSelect01" name="Regiao Urbana">
+                                    <select class="custom-select" id="inputGroupSelect01" name="reg_urbana" required>
                                         <option selected>Regiões Urbanas</option>
                                         <option value="Anhanduizinho">Anhanduizinho</option>
                                         <option value="Bandeira">Bandeira</option>
@@ -122,21 +122,26 @@
                         <div class="row mt-5 border rounded">
                             <div class="col-sm pt-2">
                                 <label class="form-label fs-6">Bairro:</label>
-                                <input name="Bairro" class="form-control w-50" type="text" placeholder="Bairro">
+                                <input name="bairro_imovel" class="form-control w-50" type="text" placeholder="Bairro"
+                                    required>
                                 <label class="form-label fs-6 pt-2">Parcelamento:</label>
-                                <input name="Parcelamento" class="form-control w-25" type="text"
-                                    placeholder="Parcelamento">
+                                <input name="parcelamento_imovel" class="form-control w-25" type="text"
+                                    placeholder="Parcelamento" required>
                                 <label class="form-label fs-6 pt-2">Quadra:</label>
-                                <input name="Quadra" class="form-control w-25" type="text" placeholder="Quadra">
-                                    
+                                <input name="quadra_imovel" class="form-control w-25" type="text" placeholder="Quadra"
+                                    required>
                                 <label class="form-label fs-6 pt-2">Lote:</label>
-                                <input name="Lote" class="form-control w-25" type="text" placeholder="Lote">
+                                <input name="lote_imovel" class="form-control w-25" type="text" placeholder="Lote"
+                                    required>
                                 <label class="form-label fs-6 pt-2">Logradouro:</label>
                                 <input name="logradouro_imovel" class="form-control" type="text"
-                                    placeholder="Logradouro">
+                                    placeholder="Logradouro" required>
+                                <label class="form-label fs-6 pt-2">Número:</label>
+                                <input name="numero_imovel" class="form-control w-25" type="text"
+                                    placeholder="Número do local">
                                 <label class="form-label fs-6 pt-2">Observações:</label>
                                 <textarea class="form-control mb-3" placeholder="Descreva as observações do local."
-                                    name="Observacao" id="" rows="10"></textarea>
+                                    name="obs_imovel" id="" rows="10"></textarea>
                             </div>
                         </div>
                     </div>
@@ -151,8 +156,7 @@
                         <div class="row mb-3">
                             <div class="col-sm">
                                 <label class="form-label fs-6" for="ocupante">Ocupante:</label>
-                                <input class="form-control" type="text" placeholder="Nome completo" id="ocupante"
-                                    >
+                                <input class="form-control" type="text" placeholder="Nome completo" id="ocupante">
                                 <label class="form-label fs-6" for="rg">RG:</label>
                                 <input class="form-control w-25" type="text" placeholder="Registro Geral - RG" id="rg">
                                 <label class="form-label fs-6" for="cpf">CPF:</label>
@@ -232,8 +236,7 @@
                                 <input class="form-control w-50" type="text" placeholder="Nome completo"
                                     id="nome-auditor">
                                 <label class="form-label fs-6" for="data-lancamento">Lançamento:</label>
-                                <input class="form-control w-25" type="date" placeholder="Data" id="data-lancamento"
-                                    >
+                                <input class="form-control w-25" type="date" placeholder="Data" id="data-lancamento">
                             </div>
                         </div>
                     </div>
