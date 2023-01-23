@@ -13,8 +13,10 @@ def cadastrar(request):
     if str(request.method) == 'POST':
         form = CadastroModelForm(request.POST, request.FILES)
         if form.is_valid():
-            cadastro = form.save(commit=False)
-            print(f'Inscricao: {cadastro.insc_imob}')
+            form.save()
+            
+            #cadastro = form.save(commit=False)
+            # print(f'Inscricao: {cadastro.insc_imob}')
                        
             messages.success(request, 'Salvo com sucesso')
             form = CadastroModelForm()
