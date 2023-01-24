@@ -6,5 +6,5 @@ from .models import Cadastro
 
 @admin.register(Cadastro)
 class CadastroAdmin(admin.ModelAdmin):
-    list_display = ('insc_imob',)
+    list_display = ('insc_imob','bairro_imovel','logradouro_imovel','numero_imovel')
 

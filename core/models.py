@@ -21,8 +21,8 @@ class Cadastro(Base):
     parcelamento_imovel = models.CharField('Parcelamento', max_length=5)
     quadra_imovel = models.CharField('Quadra', max_length=5)
     lote_imovel = models.CharField('Lote', max_length=3)
-    logradouro_imovel = models.CharField('Inscricao',max_length=120)
-    numero_imovel = models.CharField('Inscricao',max_length=7)
+    logradouro_imovel = models.CharField('Logradouro',max_length=120)
+    numero_imovel = models.CharField('Número do local',max_length=7)
     obs_imovel = models.TextField('Observacao')
     
     def __str__(self):
