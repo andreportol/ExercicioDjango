@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.shortcuts import render
 
 from .forms import CadastroModelForm
+from .models import Cadastro
 
 
 # Create your views here.
@@ -40,4 +41,7 @@ def atualizar(request):
 
 
 def pesquisar(request):
-    return render(request, 'pesquisar.html')
+    context = {
+        'cadastros' : Cadastro.objects.all()
+    }
+    return render(request, 'pesquisar.html', context)

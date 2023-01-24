@@ -37,8 +37,7 @@
         <div class="row">
             <div class="col-md">
                 <div class="row g-3">
-                    <form class="form border rounded p-3" action="{% url 'cadastrar' %}" method="POST">
-                        {% csrf_token %}
+                    <form class="form border rounded p-3" action="{% url 'pesquisar' %}" method="GET">
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="inputInscricao" class="form-label">Inscrição:</label>
@@ -78,7 +77,7 @@
                                 </select>
                             </div>
                             <div class="col-12 my-3">
-                                <button type="button" class="btn btn-primary my-3">Pesquisar</button>
+                                <button type="submit" class="btn btn-primary my-3">Pesquisar</button>
                             </div>
                         </div>
                     </form>
@@ -86,17 +85,42 @@
             </div>
         </div>
     </div>
-    
-    <div class="container">
+
+    <div class="container bg-nav border rounded mt-5">
         <div class="row">
             <div class="col">
-                    <!-- Inserir tabela aqui-->
-                <h1> Inserir tabela aqui </h1>
+                <!-- Inserir tabela aqui-->
+                <h1 class="text-center text-white fs-1 py-4">Tabela</h1>
+                <table class="table table-primary table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Inscrição</th>
+                            <th scope="col">Logradouro</th>
+                            <th scope="col">Número</th>
+                            <th scope="col">Região</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cadastro in cadastros %}
+                        <tr>
+                            <td>{{cadastro.id}}</td>
+                            <td>{{cadastro.insc_imob}}</td>
+                            <td>{{cadastro.logradouro_imovel}}</td>
+                            <td>{{cadastro.numero_imovel}}</td>
+                            <td>{{cadastro.reg_urbana}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+
+
             </div>
         </div>
     </div>
-    
-    
+
+
 
 
 </body>
