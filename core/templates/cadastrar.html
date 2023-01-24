@@ -14,43 +14,20 @@
 </head>
 
 <body>
-   <!-- Navegação -->
+    <!-- Navegação -->
     <nav class="navbar mb-5 bg-nav">
         <div class="container-fluid">
             <div class="container border rounded pt-3">
                 <div class="row">
-                    <div class="col-sm-1 mb-2 text-center">
-                        <img class="img-fluid" src="{% static 'img/Brasao.png' %}" alt="Brasao CG" width="100"
-                            height="100">
+                    <div class="col-lg-1 mb-2 text-center">
+                        <img class="img-fluid" src="{% static 'img/Brasao.png' %}" alt="Brasao CG" width="80"
+                            height="80">
                     </div>
-                    <div class="col-sm-11 text-center text-white pt-2">
-                        <h1 class="fs-3">CGAP – Coordenadoria de Gestão de Áreas Públicas</h1>
+                    <div class="col-lg-11 text-center text-white pt-2">
+                        <h1 class="fs-4">CGAP – Coordenadoria de Gestão de Áreas Públicas</h1>
                         <h2 class="fs-4">Secretária Municipal de Meio Ambiente e Gestão Urbana</h2>
                     </div>
                 </div>
-
-                <div class="row border rounded">
-                    <div class="col">
-                        <nav class="navbar navbar-expand-lg bg-nav">
-                            <div class="container-fluid">
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-                                    aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon bg-light"></span>
-                                </button>
-                                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                                    <div class="col links-nav">
-                                        <a class="nav-link text-white" href="#">Cadastro</a>
-                                        <a class="nav-link text-white" href="#">Documentação</a>
-                                        <a class="nav-link text-white" href="#">Responsável Técnico</a>
-                                        <a class="nav-link text-white" href="#">Dados do local</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-               
             </div>
         </div>
     </nav>
@@ -60,7 +37,7 @@
     <div class="container">
         <div class="row text-title border rounded p-3">
             <div class="col-sm text-center">
-                <h1 class="text-white fs-2">Cadastro de Áreas Públicas</h1>
+                <h1 class="text-white fs-2 w-auto">Cadastro de Áreas Públicas</h1>
             </div>
         </div>
         <div class="row">
@@ -83,26 +60,26 @@
                     <div class="container mb-5 p-2">
                         <div class="row">
                             <div class="col text-center fs-4 p-3">
-                                <h2 class="fs-2">Dados do Imóvel</h2>
+                                <h2 class="fs-2">Dados do Local</h2>
                             </div>
                         </div>
                         <div class="row border rounded ">
-                            <div class="col-sm-6 pb-3">
+                            <div class="col-lg-6 pb-3">
                                 <label class="form-label fs-6">Inscrição Imobiliária:</label>
-                                <input class="form-control w-50" type="text" placeholder="N. da Inscrição" autofocus
+                                <input class="form-control w-auto" type="text" placeholder="N. da Inscrição" autofocus
                                     maxlength="11" minlength="11" name="insc_imob">
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-lg-6">
                                 <div class="row">
-                                    <div class="col-sm-3">
-                                        <label class="form-label fs-6">Coordenada UTM: </label>
+                                    <div class="col-lg-4">
+                                        <label class="form-label fs-6">Coordernada UTM: </label>
                                     </div>
-                                    <div class="col-sm-8 py-2 ">
-                                        <input class="form-control" type="number" min="0" max="100" step=". 01"
-                                            placeholder="Coordenada X" name="utm_x">
+                                    <div class="col-lg-8 py-2 ">
+                                        <input class="form-control w-auto" type="number" min="0" step=". 01"
+                                            placeholder="Coord. X" name="utm_x">
                                         <div class="pt-2">
-                                            <input class="form-control" type="number" step=".01"
-                                                placeholder="Coordenada Y" name="utm_y">
+                                            <input class="form-control w-auto" type="number" min="0" step=".01"
+                                                placeholder="Coord. Y" name="utm_y">
                                         </div>
                                     </div>
                                 </div>
@@ -132,24 +109,24 @@
                         </div>
 
                         <div class="row mt-5 border rounded">
-                            <div class="col-sm pt-2">
+                            <div class="col-lg-12 pt-2">
                                 <label class="form-label fs-6">Bairro:</label>
-                                <input name="bairro_imovel" class="form-control w-50" type="text" placeholder="Bairro"
+                                <input name="bairro_imovel w-auto" class="form-control" type="text" placeholder="Bairro"
                                     required>
                                 <label class="form-label fs-6 pt-2">Parcelamento:</label>
-                                <input name="parcelamento_imovel" class="form-control w-25" type="text"
+                                <input name="parcelamento_imovel" class="form-control w-auto" type="text"
                                     placeholder="Parcelamento" required>
                                 <label class="form-label fs-6 pt-2">Quadra:</label>
-                                <input name="quadra_imovel" class="form-control w-25" type="text" placeholder="Quadra"
+                                <input name="quadra_imovel" class="form-control w-auto" type="text" placeholder="Quadra"
                                     required>
                                 <label class="form-label fs-6 pt-2">Lote:</label>
-                                <input name="lote_imovel" class="form-control w-25" type="text" placeholder="Lote"
+                                <input name="lote_imovel" class="form-control w-auto" type="text" placeholder="Lote"
                                     required>
                                 <label class="form-label fs-6 pt-2">Logradouro:</label>
                                 <input name="logradouro_imovel" class="form-control" type="text"
                                     placeholder="Logradouro" required>
                                 <label class="form-label fs-6 pt-2">Número:</label>
-                                <input name="numero_imovel" class="form-control w-25" type="text"
+                                <input name="numero_imovel" class="form-control w-auto" type="text"
                                     placeholder="Número do local">
                                 <label class="form-label fs-6 pt-2">Observações:</label>
                                 <textarea class="form-control mb-3" placeholder="Descreva as observações do local."
@@ -162,17 +139,18 @@
                     <div class="container border rounded">
                         <div class="row pt-3">
                             <div class="col-sm text-center">
-                                <h2 class="fs-2">Cadastro</h2>
+                                <h2 class="fs-2">Cadastro do ocupante</h2>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm">
-                                <label class="form-label fs-6" for="ocupante">Ocupante:</label>
+                                <label class="form-label fs-6" for="ocupante">Nome:</label>
                                 <input class="form-control" type="text" placeholder="Nome completo" id="ocupante">
                                 <label class="form-label fs-6" for="rg">RG:</label>
-                                <input class="form-control w-25" type="text" placeholder="Registro Geral - RG" id="rg">
+                                <input class="form-control w-auto" type="text" placeholder="Registro Geral - RG"
+                                    id="rg">
                                 <label class="form-label fs-6" for="cpf">CPF:</label>
-                                <input class="form-control w-25" type="text" placeholder="N. do CPF" id="cpf"
+                                <input class="form-control w-auto" type="text" placeholder="N. do CPF" id="cpf"
                                     maxlength="11" minlength="11">
                             </div>
                         </div>
@@ -185,32 +163,33 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-4 ">
+                            <div class="col-lg-4 ">
                                 <label class="form-label fs-6" for="num_notif">Notificação:</label>
-                                <input class="form-control w-50" type="text" id="num_notif"
+                                <input class="form-control w-auto" type="text" id="num_notif"
                                     placeholder="N. da Notificação" minlength="5" maxlength="6">
                                 <label class="form-label fs-6" for="num_auto">Autuação:</label>
-                                <input class="form-control w-50" type="text" id="num_auto"
+                                <input class="form-control w-auto" type="text" id="num_auto"
                                     placeholder="N. do Auto de Infração" minlength="5" maxlength="6">
                             </div>
-                            <div class="col-4">
+                            <div class="col-lg-4">
 
                             </div>
-                            <div class="col-4 pb-2">
+                            <div class="col-lg-4 pb-2">
                                 <label class="form-label fs-6" for="date-notif">Data Notificação:</label>
-                                <input class="form-control w-50" type="date" id="date-notif"
+                                <input class="form-control w-auto" type="date" id="date-notif"
                                     placeholder="Data Notificação">
                                 <label class="form-label fs-6" for="date-auto">Data Autuação:</label>
-                                <input class="form-control w-50" type="date" id="date-auto" placeholder="Data Autuação">
+                                <input class="form-control w-auto" type="date" id="date-auto"
+                                    placeholder="Data Autuação">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-sm">
                                 <label class="form-label fs-6">Processo Administrativo:</label>
-                                <input class="form-control w-25" type="text" placeholder="Processo vinculado">
+                                <input class="form-control w-auto" type="text" placeholder="Processo vinculado">
                                 <label class="form-label fs-6">CNPJ:</label>
-                                <input class="form-control w-25" type="text" placeholder="Número da Pessoa Jurídica">
+                                <input class="form-control w-auto" type="text" placeholder="Número da Pessoa Jurídica">
                                 <label class="form-label fs-6 pt-2">Observações:</label>
                                 <textarea class="form-control mb-3" placeholder="Descreva as observações do local."
                                     name="" id="" rows="10"></textarea>
@@ -238,17 +217,16 @@
 
                     <div class="container border rounded mt-3 mb-3">
                         <div class="row">
-                            <div class="col-sm">
+                            <div class="col-lg">
                                 <h2 class="text-center fs-2">Auditor Fiscal</h2>
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-sm">
-                                <label class="form-label fs-6" for="nome-auditor">Nome Completo:</label>
-                                <input class="form-control w-50" type="text" placeholder="Nome completo"
-                                    id="nome-auditor">
+                            <div class="col-lg">
+                                <label class="form-label fs-6" for="nome-auditor">Nome:</label>
+                                <input class="form-control" type="text" placeholder="Nome" id="nome-auditor">
                                 <label class="form-label fs-6" for="data-lancamento">Lançamento:</label>
-                                <input class="form-control w-25" type="date" placeholder="Data" id="data-lancamento">
+                                <input class="form-control w-auto" type="date" placeholder="Data" id="data-lancamento">
                             </div>
                         </div>
                     </div>
