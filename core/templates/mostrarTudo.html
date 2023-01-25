@@ -1,0 +1,97 @@
+{% load django_bootstrap5 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de Dados</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'css/styles_cadastro.css' %}">
+</head>
+
+<body class="bg-nav mt-5">
+    <!-- Navegação -->
+    <nav class="navbar mb-5 bg-nav">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-1 mb-2 text-center">
+                        <img class="img-fluid" src="{% static 'img/Brasao.png' %}" alt="Brasao CG" width="80"
+                            height="80">
+                    </div>
+                    <div class="col-lg-11 text-center text-white pt-2">
+                        <h1 class="fs-4">CGAP – Coordenadoria de Gestão de Áreas Públicas</h1>
+                        <h2 class="fs-4">Secretária Municipal de Meio Ambiente e Gestão Urbana</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid bg-nav">
+        <div class="row">
+            <div class="col">
+                <!-- Inserir tabela aqui-->
+                <h1 class="text-center text-white fs-1 py-4">Tabela Completa</h1>
+                <table class="table table-primary table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Inscrição</th>
+                            <th scope="col">UTM_X</th>
+                            <th scope="col">UTM_Y</th>
+                            <th scope="col">Região urbana</th>
+                            <th scope="col">Tipo Logradouro</th>
+                            <th scope="col">Bairro imóvel</th>
+                            <th scope="col">Parcelamento imóvel</th>
+                            <th scope="col">Quadra</th>
+                            <th scope="col">Lote</th>
+                            <th scope="col">Logradouro</th>
+                            <th scope="col">Número</th>
+                            <th scope="col">obs.</th>
+                            <th scope="col">Nome Ocupante</th>
+                            <th scope="col">RG</th>
+                            <th scope="col">CPF</th>
+                            <th scope="col">Notificação</th>
+                            <th scope="col">Data Notificação</th>
+                            <th scope="col">Auto</th>
+                            <th scope="col">Data Auto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cadastro in cadastros %}
+                        <tr>
+                            <td>{{cadastro.id}}</td>
+                            <td>{{cadastro.insc_imob}}</td>
+                            <td>{{cadastro.utm_x}}</td>
+                            <td>{{cadastro.utm_y}}</td>
+                            <td>{{cadastro.reg_urbana}}</td>
+                            <td>{{cadastro.tipo_logradouro}}</td>
+                            <td>{{cadastro.bairro_imovel}}</td>
+                            <td>{{cadastro.parcelamento_imovel}}</td>
+                            <td>{{cadastro.quadra_imovel}}</td>
+                            <td>{{cadastro.lote_imovel}}</td>
+                            <td>{{cadastro.logradouro_imovel}}</td>
+                            <td>{{cadastro.numero_imovel}}</td>
+                            <td>{{cadastro.obs_imovel}}</td>
+                            <td>{{cadastro.nome_ocupante}}</td>
+                            <td>{{cadastro.rg_ocupante}}</td>
+                            <td>{{cadastro.cpf_ocupante}}</td>
+                            <td>{{cadastro.num_notif}}</td>
+                            <td>{{cadastro.data_notif}}</td>
+                            <td>{{cadastro.num_auto}}</td>
+                            <td>{{cadastro.data_auto}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

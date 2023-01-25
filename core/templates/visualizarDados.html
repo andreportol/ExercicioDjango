@@ -1,0 +1,69 @@
+{% load django_bootstrap5 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualização</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'css/styles_cadastro.css' %}">
+</head>
+<body>
+    <!-- Navegação -->
+    <nav class="navbar mb-5 bg-nav">
+        <div class="container-fluid">
+            <div class="container border rounded pt-3">
+                <div class="row">
+                    <div class="col-lg-1 mb-2 text-center">
+                        <img class="img-fluid" src="{% static 'img/Brasao.png' %}" alt="Brasao CG" width="80"
+                            height="80">
+                    </div>
+                    <div class="col-lg-11 text-center text-white pt-2">
+                        <h1 class="fs-4">CGAP – Coordenadoria de Gestão de Áreas Públicas</h1>
+                        <h2 class="fs-4">Secretária Municipal de Meio Ambiente e Gestão Urbana</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    
+    
+    <div class="container bg-nav border rounded mt-5">
+        <div class="row">
+            <div class="col">
+                <!-- Inserir tabela aqui-->
+                <h1 class="text-center text-white fs-1 py-4">Tabela Filtrada</h1>
+                <table class="table table-primary table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Inscrição</th>
+                            <th scope="col">Logradouro</th>
+                            <th scope="col">Número</th>
+                            <th scope="col">Região</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cadastro in cadastros %}
+                        <tr>
+                            <td>{{cadastro.id}}</td>
+                            <td><a href="{% url 'mostrarTudo' %}">{{cadastro.insc_imob}}</a></td>
+                            <td>{{cadastro.logradouro_imovel}}</td>
+                            <td>{{cadastro.numero_imovel}}</td>
+                            <td>{{cadastro.reg_urbana}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

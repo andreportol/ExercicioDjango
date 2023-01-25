@@ -14,7 +14,6 @@ class Base(models.Model):
 
 class Cadastro(Base):
     insc_imob = models.CharField('Inscricao',max_length=11)
-    
     utm_x = models.DecimalField('UTM_X', max_digits=6, decimal_places=3,null=True)
     utm_y = models.DecimalField('UTM_Y', max_digits=6, decimal_places=3, null=True)
     reg_urbana = models.CharField('Região Urbana', max_length=50, null=True)   

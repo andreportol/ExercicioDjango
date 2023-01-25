@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.shortcuts import render
 
 from .forms import CadastroModelForm
-from .models import Cadastro
+from .models import Cadastro, Base
 
 
 # Create your views here.
@@ -43,3 +43,16 @@ def pesquisar(request):
         'cadastros' : Cadastro.objects.all()
     }
     return render(request, 'pesquisar.html', context)
+
+def visualizarDados(request):
+    context = {
+        'cadastros' : Cadastro.objects.all()
+    }
+    return render(request, 'visualizarDados.html', context)
+
+def mostrarTudo(request):
+    context = {
+        'cadastros' : Cadastro.objects.all(),
+        
+    }
+    return render(request, 'mostrarTudo.html', context) 
