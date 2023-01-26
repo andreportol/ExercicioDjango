@@ -208,20 +208,21 @@
                                 <input class="form-control w-auto" name="num_processo" type="text" placeholder="Processo vinculado">
                                 <label class="form-label fs-6">CNPJ:</label>
                                 <input class="form-control w-auto" name="num_cnpj" type="text" placeholder="Número da Pessoa Jurídica">
-                                <label class="form-label fs-6 pt-2">Observações:</label>
-                                <textarea class="form-control mb-3" name="obs_documentacao" placeholder = "Descreva as observações do local."
-                                    id="" rows="7"></textarea>
+                                <label class="form-label fs-6 pt-2" for="texto" >Observações:</label>
+                                <textarea class="form-control mb-3" name="obs_documentacao" placeholder = "Relátorio Técnico n. 100 e Comunicado n.45"
+                                    id="texto" rows="7">
+                                </textarea>
                                 <label class="form-label fs-5" for="">Reincidente</label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                        id="flexRadioDefault1">
+                                    <input class="form-check-input" type="radio" name="RadioReincidente"
+                                        id="flexRadioDefault1" value="SIM">
                                     <label class="form-check-label" for="flexRadioDefault1">
                                         SIM
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                        id="flexRadioDefault2" checked>
+                                    <input class="form-check-input" type="radio" name="RadioReincidente"
+                                        id="flexRadioDefault2" value="NAO" checked>
                                     <label class="form-check-label" for="flexRadioDefault2">
                                         NÃO
                                     </label>

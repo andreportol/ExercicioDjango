@@ -15,12 +15,12 @@
 
 <body class="bg-nav mt-5">
     <!-- Navegação -->
-    <nav class="navbar mb-5 bg-nav">
+    <nav class="navbar mb-5 bg-nav border rounded">
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-1 mb-2 text-center">
-                        <img class="img-fluid" src="{% static 'img/Brasao.png' %}" alt="Brasao CG" width="80"
+                        <img class="img-fluid border rounded" src="{% static 'img/Brasao.png' %}" alt="Brasao CG" width="80"
                             height="80">
                     </div>
                     <div class="col-lg-11 text-center text-white pt-2">
@@ -35,11 +35,10 @@
     <div class="container-fluid bg-nav">
         <div class="row">
             <div class="col">
-                <!-- Inserir tabela aqui-->
-                <h1 class="text-center text-white fs-1 py-4">Tabela</h1>
+                <h1 class="text-center text-white fs-1 py-2">Informações Complementares</h1>
                 <!-- tabela localização -->
                 <h2 class="fs-4 text-center text-white">Dados Imóvel</h2>
-                <table class="table table-primary table-striped">
+                <table class="table table-primary table-striped mt-4">
                     <thead>
                         <tr>
                             <th scope="col">Inscrição</th>
@@ -68,8 +67,8 @@
                     </tbody>
                 </table>
                 <!--Tabela Dados Ocupante -->
-                <h2 class="fs-4 text-center text-white">Dados Ocupante</h2>
-                <table class="table table-primary table-striped">
+                <h2 class="fs-4 text-center text-white pt-3">Dados Ocupante</h2>
+                <table class="table table-primary table-striped mt-4">
                     <thead>
                         <tr>
                             <th scope="col">Nome Ocupante</th>
@@ -86,14 +85,18 @@
                     </tbody>
                 </table>
                 <!--Tabela Documentação -->
-                <h2 class="fs-4 text-center text-white">Dados Documentação</h2>
-                <table class="table table-primary table-striped">
+                <h2 class="fs-4 text-center text-white pt-3">Dados Documentação</h2>
+                <table class="table table-primary table-striped mt-4">
                     <thead>
                         <tr>
                             <th scope="col">Notificação</th>
-                            <th scope="col">Data Notificação</th>
+                            <th scope="col">Data da Notificação</th>
                             <th scope="col">Auto</th>
-                            <th scope="col">Data Auto</th>
+                            <th scope="col">Data do Auto</th>
+                            <th scope="col">Processo</th>
+                            <th scope="col">CNPJ</th>
+                            <th scope="col">Observações</th>
+                            <th scope="col">Reincidente</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -102,6 +105,10 @@
                             <td>{{cadastro.data_notif}}</td>
                             <td>{{cadastro.num_auto}}</td>
                             <td>{{cadastro.data_auto}}</td>
+                            <td>{{cadastro.num_processo}}</td>
+                            <td>{{cadastro.num_cnpj}}</td>
+                            <td>{{cadastro.obs_documentacao}}</td>
+                            <td>{{cadastro.RadioReincidente}}</td>        
                         </tr>
                     </tbody>
                 </table>
