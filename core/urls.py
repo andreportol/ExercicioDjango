@@ -10,6 +10,6 @@ urlpatterns = [
     path('atualizar', atualizar, name='atualizar'),
     path('pesquisar', pesquisar, name='pesquisar'),
     path('visualizarDados', visualizarDados, name='visualizarDados'),
-    path('complementodados', complementodados, name='complementodados'),
+    path('complementodados/<int:pk>', complementodados, name='complementodados'),
     
 ]

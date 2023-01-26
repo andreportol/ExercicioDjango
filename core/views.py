@@ -50,9 +50,8 @@ def visualizarDados(request):
     }
     return render(request, 'visualizarDados.html', context)
 
-def complementodados(request):
+def complementodados(request, pk):
     context = {
-        'cadastros' : Cadastro.objects.all(),
-        
+        'cadastro' : Cadastro.objects.get(id = pk),       
     }
     return render(request, 'complementodados.html', context) 

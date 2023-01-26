@@ -37,25 +37,59 @@
             <div class="col">
                 <!-- Inserir tabela aqui-->
                 <h1 class="text-center text-white fs-1 py-4">Tabela</h1>
+                <!-- tabela localização -->
+                <h2 class="fs-4 text-center text-white">Dados Imóvel</h2>
                 <table class="table table-primary table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
                             <th scope="col">Inscrição</th>
                             <th scope="col">UTM_X</th>
                             <th scope="col">UTM_Y</th>
-                            <th scope="col">Região urbana</th>
                             <th scope="col">Tipo Logradouro</th>
-                            <th scope="col">Bairro imóvel</th>
                             <th scope="col">Parcelamento imóvel</th>
                             <th scope="col">Quadra</th>
                             <th scope="col">Lote</th>
-                            <th scope="col">Logradouro</th>
                             <th scope="col">Número</th>
                             <th scope="col">obs.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{cadastro.insc_imob}}</td>
+                            <td>{{cadastro.utm_x}}</td>
+                            <td>{{cadastro.utm_y}}</td>
+                            <td>{{cadastro.tipo_logradouro}}</td>
+                            <td>{{cadastro.parcelamento_imovel}}</td>
+                            <td>{{cadastro.quadra_imovel}}</td>
+                            <td>{{cadastro.lote_imovel}}</td>
+                            <td>{{cadastro.numero_imovel}}</td>
+                            <td>{{cadastro.obs_imovel}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Tabela Dados Ocupante -->
+                <h2 class="fs-4 text-center text-white">Dados Ocupante</h2>
+                <table class="table table-primary table-striped">
+                    <thead>
+                        <tr>
                             <th scope="col">Nome Ocupante</th>
                             <th scope="col">RG</th>
                             <th scope="col">CPF</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{cadastro.nome_ocupante}}</td>
+                            <td>{{cadastro.rg_ocupante}}</td>
+                            <td>{{cadastro.cpf_ocupante}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Tabela Documentação -->
+                <h2 class="fs-4 text-center text-white">Dados Documentação</h2>
+                <table class="table table-primary table-striped">
+                    <thead>
+                        <tr>
                             <th scope="col">Notificação</th>
                             <th scope="col">Data Notificação</th>
                             <th scope="col">Auto</th>
@@ -63,30 +97,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for cadastro in cadastros %}
                         <tr>
-                            <td>{{cadastro.id}}</td>
-                            <td>{{cadastro.insc_imob}}</td>
-                            <td>{{cadastro.utm_x}}</td>
-                            <td>{{cadastro.utm_y}}</td>
-                            <td>{{cadastro.reg_urbana}}</td>
-                            <td>{{cadastro.tipo_logradouro}}</td>
-                            <td>{{cadastro.bairro_imovel}}</td>
-                            <td>{{cadastro.parcelamento_imovel}}</td>
-                            <td>{{cadastro.quadra_imovel}}</td>
-                            <td>{{cadastro.lote_imovel}}</td>
-                            <td>{{cadastro.logradouro_imovel}}</td>
-                            <td>{{cadastro.numero_imovel}}</td>
-                            <td>{{cadastro.obs_imovel}}</td>
-                            <td>{{cadastro.nome_ocupante}}</td>
-                            <td>{{cadastro.rg_ocupante}}</td>
-                            <td>{{cadastro.cpf_ocupante}}</td>
                             <td>{{cadastro.num_notif}}</td>
                             <td>{{cadastro.data_notif}}</td>
                             <td>{{cadastro.num_auto}}</td>
                             <td>{{cadastro.data_auto}}</td>
                         </tr>
-                        {% endfor %}
                     </tbody>
                 </table>
             </div>

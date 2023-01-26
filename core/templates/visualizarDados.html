@@ -51,7 +51,7 @@
                         {% for cadastro in cadastros %}
                         <tr>
                             <td>{{cadastro.id}}</td>
-                            <td><a href="{% url 'complementodados' %}">{{cadastro.insc_imob}}</a></td>
+                            <td><a href="{% url 'complementodados' cadastro.id %}">{{cadastro.insc_imob}}</a></td>
                             <td>{{cadastro.logradouro_imovel}}</td>
                             <td>{{cadastro.numero_imovel}}</td>
                             <td>{{cadastro.reg_urbana}}</td>
