@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render
 
+from .filters import CadastroFilter
 from .forms import CadastroModelForm
 from .models import Base, Cadastro
 
@@ -39,10 +40,15 @@ def atualizar(request):
 
 
 def pesquisar(request):
+    template_name = 'pesquisar.html'
+    object_list = Cadastro.objects.all()
+    cadastro_list = CadastroFilter(request.GET, queryset=object_list)
+
     context = {
-        'cadastros' : Cadastro.objects.all()
+        'object_list' : object_list,
+        'filter': cadastro_list
     }
-    return render(request, 'pesquisar.html', context)
+    return render(request, template_name, context)
 
 def visualizarDados(request):
     context = {

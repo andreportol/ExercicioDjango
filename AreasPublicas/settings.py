@@ -37,11 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    
+    'django.contrib.staticfiles',  
     'django_bootstrap5',
     'stdimage',
     'core',
+    'django_filters',
 ]
 
 MIDDLEWARE = [

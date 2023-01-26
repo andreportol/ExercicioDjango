@@ -41,12 +41,12 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="inputInscricao" class="form-label">Inscrição:</label>
-                                <input type="text" class="form-control" id="inputInscricao"
+                                <input name="insc_imob" type="text" class="form-control" id="inputInscricao"
                                     placeholder="Inscrição Imobiliária">
                             </div>
                             <div class="col-md-6">
                                 <label for="inputNameOcupante" class="form-label">Nome:</label>
-                                <input type="text" class="form-control" id="inputNameOcupante"
+                                <input name="nome_ocupante" type="text" class="form-control" id="inputNameOcupante"
                                     placeholder="Nome do Ocupante">
                             </div>
                         </div>
@@ -80,6 +80,28 @@
                                 <button type="submit" class="btn btn-primary my-3">Pesquisar</button>
                             </div>
                         </div>
+                        <h4 class="fs-3 text-white text-center">Dados Filtrados</h4>
+                        <table class="table table-primary table-striped mt-4">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Inscrição</th>
+                                    <th scope="col">Nome Ocupante</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for obj in filter.qs %}
+                                <tr>
+                                    <td>{{obj.insc_imob}}</td>
+                                    <td>{{obj.nome_ocupante}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+
+
+
+
+
                     </form>
                 </div>
             </div>
