@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.shortcuts import render
 
 from .forms import CadastroModelForm
-from .models import Cadastro, Base
+from .models import Base, Cadastro
 
 
 # Create your views here.
@@ -50,9 +50,9 @@ def visualizarDados(request):
     }
     return render(request, 'visualizarDados.html', context)
 
-def mostrarTudo(request):
+def complementodados(request):
     context = {
         'cadastros' : Cadastro.objects.all(),
         
     }
-    return render(request, 'mostrarTudo.html', context) 
+    return render(request, 'complementodados.html', context) 

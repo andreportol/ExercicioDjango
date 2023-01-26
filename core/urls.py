@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import (atualizar, cadastrar, deletar, index, mostrarTudo,
+from .views import (atualizar, cadastrar, complementodados, deletar, index,
                     pesquisar, visualizarDados)
 
 urlpatterns = [
@@ -10,6 +10,6 @@ urlpatterns = [
     path('atualizar', atualizar, name='atualizar'),
     path('pesquisar', pesquisar, name='pesquisar'),
     path('visualizarDados', visualizarDados, name='visualizarDados'),
-    path('mostrarTudo', mostrarTudo, name='mostrarTudo'),
+    path('complementodados', complementodados, name='complementodados'),
     
 ]
