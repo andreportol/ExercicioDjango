@@ -79,12 +79,14 @@
                             </div>
                             <div class="col-12 my-3">
                                 <button type="submit" class="btn btn-primary my-3">Pesquisar</button>
+                                <a class="btn btn-primary mx-3" href="{% url 'index' %}" role="button">Voltar</a>
                             </div>
                         </div>
                         <h4 class="fs-3 text-white text-center">Dados Filtrados</h4>
                         <table class="table table-primary table-striped mt-4">
                             <thead>
                                 <tr>
+                                    <th scope="col">ID</th>
                                     <th scope="col">Inscrição</th>
                                     <th scope="col">Nome Ocupante</th>
                                 </tr>
@@ -92,17 +94,13 @@
                             <tbody>
                                 {% for obj in filter.qs %}
                                 <tr>
+                                    <td><a href="{% url 'complementodados' obj.id %}">{{obj.id}}</a></td>
                                     <td>{{obj.insc_imob}}</td>
                                     <td>{{obj.nome_ocupante}}</td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
                         </table>
-
-
-
-
-
                     </form>
                 </div>
             </div>

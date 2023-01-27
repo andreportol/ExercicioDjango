@@ -35,8 +35,11 @@ def deletar(request):
     return render(request, 'deletar.html')
 
 
-def atualizar(request):
-    return render(request, 'atualizar.html')
+def editarCadastro(request, pk):
+    context = {
+        'cadastro' : Cadastro.objects.get(id = pk),       
+    }
+    return render(request, 'editarCadastro.html', context)
 
 
 def pesquisar(request):

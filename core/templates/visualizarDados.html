@@ -2,6 +2,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
     {% bootstrap_javascript %}
     <link rel="stylesheet" href="{% static 'css/styles_cadastro.css' %}">
 </head>
+
 <body>
     <!-- Navegação -->
     <nav class="navbar mb-5 bg-nav">
@@ -29,9 +31,14 @@
             </div>
         </div>
     </nav>
-    
-    
-    
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-primary" href="{% url 'index' %}" role="button">Voltar</a>
+            </div>
+        </div>
+    </div>
+
     <div class="container bg-nav border rounded mt-5">
         <div class="row">
             <div class="col">
@@ -50,8 +57,8 @@
                     <tbody>
                         {% for cadastro in cadastros %}
                         <tr>
-                            <td>{{cadastro.id}}</td>
-                            <td><a href="{% url 'complementodados' cadastro.id %}">{{cadastro.insc_imob}}</a></td>
+                            <td><a href="{% url 'complementodados' cadastro.id %}">{{cadastro.id}}</a></td>
+                            <td>{{cadastro.insc_imob}}</a></td>
                             <td>{{cadastro.logradouro_imovel}}</td>
                             <td>{{cadastro.numero_imovel}}</td>
                             <td>{{cadastro.reg_urbana}}</td>
@@ -66,4 +73,5 @@
         </div>
     </div>
 </body>
+
 </html>
