@@ -1,5 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.generic.edit import UpdateView
 
 from .filters import CadastroFilter
 from .forms import CadastroModelForm
@@ -37,10 +39,9 @@ def deletar(request):
 
 def editarCadastro(request, pk):
     context = {
-        'cadastro' : Cadastro.objects.get(id = pk),       
+        'dadoselecionado' : Cadastro.objects.get(id = pk),
     }
     return render(request, 'editarCadastro.html', context)
-
 
 def pesquisar(request):
     template_name = 'pesquisar.html'
