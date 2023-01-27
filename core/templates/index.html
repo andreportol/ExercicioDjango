@@ -35,22 +35,33 @@
         </div>
     </nav>
 
-    <div class="container mt-5">
+    <div class="container navbar border rounded text-center text-white mt-5 pb-5">
         <div class="row">
-            <div class="col-sm">
-                <div class="select-option">
-                    <h2 class="fs-2 text-center text-decoration-underline pb-5">Escolha uma opção</h2>
-                    <ul class="border border-3 rounded pb-3 " type="circulo" >
-                        <li class="text-decoration-underline fs-3 pb-3"><a href="{% url 'cadastrar' %}">Cadastrar Área</a></li>
-                        <li class="text-decoration-underline fs-3 pb-3"><a href="{% url 'deletar' %}">Deletar Área</a></li>
-                        <li class="text-decoration-underline fs-3 pb-3"><a href="{% url 'atualizar' %}">Atualizar</a></li>
-                        <li class="text-decoration-underline fs-3 pb-3"><a href="{% url 'pesquisar'%}">Pesquisar</a></li>
-                        <li class="text-decoration-underline fs-3 pb-3"><a href="{% url 'visualizarDados' %}">Visualizar Dados</a></li>
-                    </ul>
-                </div>
+            <div class="col">
+                <h2 class="fs-1 mt-3">Escolha uma opção</h2>
+            </div>
+        </div>
+        <div class="row pt-5">
+            <div class="col">
+                <a class="btn btn-lg btn-primary mt-3" href="{% url 'cadastrar' %}" role="button">Cadastrar</a>
+            </div>
+            <div class="col pb-4">
+                <a class="btn btn-lg btn-primary mt-3" href="{% url 'deletar' %}" role="button">Deletar</a>
+            </div>
+            <div class="col pb-4">
+                <a class="btn btn-lg btn-primary mt-3" href="{% url 'atualizar' %}" role="button">Atualizar</a>
+            </div>
+            <div class="col pb-4">
+                <a class="btn btn-lg btn-primary mt-3" href="{% url 'pesquisar' %}" role="button">Pesquisar</a>
+            </div>
+            <div class="col pb-4">
+                <a class="btn btn-lg btn-primary mt-3" href="{% url 'visualizarDados' %}" role="button">Visualizar</a>
             </div>
         </div>
     </div>
+
+
+
 
     <!--container de navegação da página -->
 </body>
